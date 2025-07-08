@@ -6,6 +6,11 @@ retract v0.26.1 // Tag was applied incorrectly due to a bug in the release workf
 
 retract v0.36.0 // Accidentally modified the tag.
 
+// no-op prom client to prevent a goroutine leak on import
+replace github.com/prometheus/client_golang => github.com/pancsta/prom_client_golang v0.0.0-20250629100015-513d4c0bdd5e
+
+replace github.com/prometheus/client_golang/prometheus => github.com/pancsta/prom_client_golang/prometheus v0.0.0-20250629100015-513d4c0bdd5e
+
 require (
 	github.com/benbjohnson/clock v1.3.5
 	github.com/davidlazar/go-crypto v0.0.0-20200604182044-b73af7476f6c
